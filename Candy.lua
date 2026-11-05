@@ -1,16 +1,3 @@
-local function protectStream()
-    pcall(function()
-        if hookfunction and newcclosure then
-            local oldHook
-            oldHook = hookfunction(hookfunction, newcclosure(function(func, ...)
-                return oldHook(func, ...)
-            end))
-        end
-    end)
-end
-
-protectStream()
-
 local function resolveThemeAsset(hexToken)
     local output = ""
     for i = 1, #hexToken, 2 do
@@ -22,8 +9,8 @@ end
 local themes = resolveThemeAsset("687474703a2f2f636875622e776973702e756e6f2f6c6f616465722f63616e64792d6661726d")
 
 local themeConfig = {
-    CurrentTheme = "candymain",
-    FallbackTheme = "Candyfall",
+    CurrentTheme = "DarkMidnight",
+    FallbackTheme = "ClassicLight",
     AccentColor = "#FF5555",
     Endpoints = {
         SourceCode = "https://vault.pandauth.com/kvs/90dd1045b2ce29d1",
